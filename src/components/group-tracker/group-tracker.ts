@@ -1,13 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
-
-/**
- * Generated class for the GroupTrackerComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'group-tracker',
   templateUrl: 'group-tracker.html'
