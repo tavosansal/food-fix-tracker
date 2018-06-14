@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>
-      Ionic Blank
+      Food Fix Tracker
     </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="refresh()">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <group-tracker foodType="Vegetables" foodColor="green"></group-tracker>
+  <group-tracker foodType="Fruits" foodColor="purple"></group-tracker>
+  <group-tracker foodType="Red" foodColor="red"></group-tracker>
+  <group-tracker foodType="Carbohydrates" foodColor="yellow"></group-tracker>
+  <group-tracker foodType="Healthy Fats" foodColor="blue"></group-tracker>
+  <group-tracker foodType="Seeds and Dressings" foodColor="orange"></group-tracker>
 </ion-content>

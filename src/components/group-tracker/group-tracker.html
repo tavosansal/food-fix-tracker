@@ -1,0 +1,19 @@
+<ion-card>
+  <ion-card-header [color]="foodColor">
+    {{foodType}}
+  </ion-card-header>
+  <ion-card-content>
+    <div float-left class="total">
+      {{total}}
+    </div>
+
+    <div float-right>
+        <button ion-button icon-only [color]="foodColor" (click)="remove()">
+          <ion-icon name="remove"></ion-icon>
+        </button>
+        <button ion-button icon-only [color]="foodColor" (click)="add()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </div>
+  </ion-card-content>
+</ion-card>
