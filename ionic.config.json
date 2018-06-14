@@ -1,0 +1,8 @@
+{
+  "name": "food-fix-tracker",
+  "app_id": "40daa4b5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
