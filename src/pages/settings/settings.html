@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngFor="let plan of plans;">
+
+
+  <ion-card>
+    <ion-card-header>
+      {{plan.name}} ({{plan.calories}} Calories)
+    </ion-card-header>
+    <ion-card-content *ngFor="let container of plan.containers;">
+      <ion-item>
+        <ion-badge item-start [color]="container.color">
+          {{container.quantity}}
+        </ion-badge>
+        {{container.label}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

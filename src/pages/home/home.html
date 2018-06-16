@@ -1,21 +1,27 @@
 <ion-header>
   <ion-navbar color="dark">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
     <ion-title>
       Food Fix Tracker
     </ion-title>
+
     <ion-buttons end>
-        <button ion-button icon-only (click)="refresh()">
-          <ion-icon name="refresh"></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button icon-only (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <group-tracker foodType="Vegetables" foodColor="green"></group-tracker>
   <group-tracker foodType="Fruits" foodColor="purple"></group-tracker>
-  <group-tracker foodType="Red" foodColor="red"></group-tracker>
+  <group-tracker foodType="Protein" foodColor="red"></group-tracker>
   <group-tracker foodType="Carbohydrates" foodColor="yellow"></group-tracker>
   <group-tracker foodType="Healthy Fats" foodColor="blue"></group-tracker>
   <group-tracker foodType="Seeds and Dressings" foodColor="orange"></group-tracker>
+  <group-tracker foodType="Oils and Nut Butters" foodColor="gray"></group-tracker>
 </ion-content>

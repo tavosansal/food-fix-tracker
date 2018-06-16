@@ -46,19 +46,21 @@ $colors: (
   yellow:     #ffe607,
   blue:       #032eaf,
   orange:     #f78300,
+  gray:       gray,
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$badge-ios-border-radius: 5px;
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$badge-md-border-radius: 5px;
 
 
 
