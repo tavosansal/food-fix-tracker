@@ -51,7 +51,7 @@ export class PlansProvider {
   }
 
   get selectedPlan(): any {
-    return this.plans.find((plan) => plan.selected === true);
+    return this.plans.find((plan: any) => plan.selected === true);
   }
 
   setSelectedPlan(planName) {
@@ -60,7 +60,7 @@ export class PlansProvider {
   }
 
   setSelectedProperty(planName) {
-    const selectedPlan = this.plans.find((plan) => plan.name === planName);
+    const selectedPlan: any = this.plans.find((plan: any) => plan.name === planName);
     if (selectedPlan) {
       selectedPlan.selected = true;
     }
