@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ComponentsModule } from '../components/components.module';
 import { IonicStorageModule} from '@ionic/storage';
 import { SettingsPage } from '../pages/settings/settings';
+import { PlansProvider } from '../providers/plans/plans';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SettingsPage } from '../pages/settings/settings';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PlansProvider
   ]
 })
 export class AppModule {}

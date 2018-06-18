@@ -13,8 +13,14 @@
   <ion-card>
     <ion-card-header>
       {{plan.name}} ({{plan.calories}} Calories)
+      <span *ngIf="plan.selected; else selectPlan">
+        <ion-icon name="checkmark-circle" float-right color="secondary"></ion-icon>
+      </span>
+      <ng-template #selectPlan>
+        <button ion-button small item-end clear no-padding float-right (click)="choosePlan(plan.name)">Choose Plan</button>
+      </ng-template>
     </ion-card-header>
-    <ion-card-content *ngFor="let container of plan.containers;">
+    <ion-card-content *ngFor="let container of plan.containers;" no-padding>
       <ion-item>
         <ion-badge item-start [color]="container.color">
           {{container.quantity}}
