@@ -17,11 +17,25 @@
 </ion-header>
 
 <ion-content padding>
-  <group-tracker foodType="Vegetables" foodColor="green"></group-tracker>
-  <group-tracker foodType="Fruits" foodColor="purple"></group-tracker>
-  <group-tracker foodType="Protein" foodColor="red"></group-tracker>
-  <group-tracker foodType="Carbohydrates" foodColor="yellow"></group-tracker>
-  <group-tracker foodType="Healthy Fats" foodColor="blue"></group-tracker>
-  <group-tracker foodType="Seeds and Dressings" foodColor="orange"></group-tracker>
-  <group-tracker foodType="Oils and Nut Butters" foodColor="gray"></group-tracker>
+  <div *ngIf="planSelected; else noPlanSelected">
+      <group-tracker foodType="Vegetables" foodColor="green"></group-tracker>
+      <group-tracker foodType="Fruits" foodColor="purple"></group-tracker>
+      <group-tracker foodType="Proteins" foodColor="red"></group-tracker>
+      <group-tracker foodType="Carbohydrates" foodColor="yellow"></group-tracker>
+      <group-tracker foodType="Healthy Fats" foodColor="blue"></group-tracker>
+      <group-tracker foodType="Seeds and Dressings" foodColor="orange"></group-tracker>
+      <group-tracker foodType="Oils & Nut Butters" foodColor="gray"></group-tracker>
+  </div>
+
+  <ng-template #noPlanSelected>
+    <div class="center">
+      <div class="bigEmoji">
+        😑
+      </div>
+      <div>
+        Uh oh...You have not selected a plan.<br>
+        Please go to settings and select a plan to see your tracker.
+      </div>
+    </div>
+  </ng-template>
 </ion-content>

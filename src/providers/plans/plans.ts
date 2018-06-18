@@ -44,14 +44,14 @@ export class PlansProvider {
     };
 
     this.plans.push(planB);
-    this.initSelectedPlan();
-  }
-
-  initSelectedPlan() {
     this.storage.get('selectedPlanName')
       .then((selectedPlanName) => {
         this.setSelectedProperty(selectedPlanName);
       })
+  }
+
+  get selectedPlan(): any {
+    return this.plans.find((plan) => plan.selected === true);
   }
 
   setSelectedPlan(planName) {

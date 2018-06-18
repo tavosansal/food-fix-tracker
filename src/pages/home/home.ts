@@ -9,8 +9,17 @@ import { AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
+  planSelected: boolean;
+
   constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController) {
 
+  }
+
+  ionViewDidEnter() {
+    this.storage.get('selectedPlanName')
+      .then((selectedPlanName) => {
+        this.planSelected = selectedPlanName;
+      });
   }
 
   refresh() {
@@ -27,7 +36,11 @@ export class HomePage {
         {
           text: 'Yes',
           handler: () => {
-            this.storage.clear();
+            this.storage.forEach((val, key) => {
+              if (key !== 'selectedPlanName') {
+                this.storage.remove(key);
+              }
+            })
             location.reload();
           }
         }
