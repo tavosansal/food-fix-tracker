@@ -10,9 +10,21 @@ import { AlertController } from 'ionic-angular';
 export class HomePage {
 
   planSelected: boolean;
+  deferredPrompt;
 
   constructor(public navCtrl: NavController, private storage: Storage, public alertCtrl: AlertController) {
 
+  }
+
+  ionViewWillEnter() {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      this.deferredPrompt = e;
+
+      this.showInstallDialog();
+    });
   }
 
   ionViewDidEnter() {
@@ -20,6 +32,32 @@ export class HomePage {
       .then((selectedPlanName) => {
         this.planSelected = selectedPlanName;
       });
+  }
+
+  showInstallDialog() {
+    const self = this;
+    const installDialog = this.alertCtrl.create({
+      title: 'Install',
+      message: 'Install app to your homescreen?',
+      buttons: [
+        {
+          text: 'No',
+        },
+        {
+          text: 'Yes',
+          handler() {
+            self.deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            self.deferredPrompt.userChoice
+              .then((choiceResult) => {
+                self.deferredPrompt = null;
+              });
+          }
+        }
+      ]
+    });
+
+    installDialog.present();
   }
 
   refresh() {
