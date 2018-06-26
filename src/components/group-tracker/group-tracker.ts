@@ -28,7 +28,7 @@ export class GroupTrackerComponent {
   ngOnInit() {
     this.storage.get(this.foodType)
       .then((storedTotal) => {
-        if (storedTotal) {
+        if (typeof storedTotal === 'number' && storedTotal >= 0) {
           this.total = storedTotal;
         } else {
           this.total = this.containerTotal;
@@ -41,9 +41,9 @@ export class GroupTrackerComponent {
     this.saveValue();
   }
 
-  remove() {
+  remove(amountToRemove) {
     if (this.total > 0) {
-      this.total -= 0.25;
+      this.total -= amountToRemove || 0.25;
     } else {
       this.total = 0;
     }
