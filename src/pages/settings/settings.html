@@ -7,11 +7,11 @@
 </ion-header>
 
 
-<ion-content *ngFor="let plan of plans;">
+<ion-content>
 
 
-  <ion-card>
-    <ion-card-header>
+  <ion-card *ngFor="let plan of plans;">
+    <ion-card-header class="no-padding-bottom">
       {{plan.name}} ({{plan.calories}} Calories)
       <span *ngIf="plan.selected; else selectPlan">
         <ion-icon name="checkmark-circle" float-right color="secondary"></ion-icon>

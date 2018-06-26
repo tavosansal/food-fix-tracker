@@ -10,12 +10,16 @@ import { ComponentsModule } from '../components/components.module';
 import { IonicStorageModule} from '@ionic/storage';
 import { SettingsPage } from '../pages/settings/settings';
 import { PlansProvider } from '../providers/plans/plans';
+import { FoodsPage } from '../pages/foods/foods';
+import { FoodDetailsPage } from '../pages/food-details/food-details';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SettingsPage,
+    FoodsPage,
+    FoodDetailsPage,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,8 @@ import { PlansProvider } from '../providers/plans/plans';
     MyApp,
     HomePage,
     SettingsPage,
+    FoodsPage,
+    FoodDetailsPage,
   ],
   providers: [
     StatusBar,

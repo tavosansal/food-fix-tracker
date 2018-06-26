@@ -43,7 +43,42 @@ export class PlansProvider {
       }],
     };
 
-    this.plans.push(planB);
+    const planA = {
+      name: 'Plan A',
+      calories: '1,200 - 1,499',
+      selected: false,
+      containers: [{
+        label: 'Vegetables',
+        color: 'green',
+        quantity: 4,
+      }, {
+        label: 'Fruits',
+        color: 'purple',
+        quantity: 2,
+      }, {
+        label: 'Proteins',
+        color: 'red',
+        quantity: 4,
+      }, {
+        label: 'Carbohydrates',
+        color: 'yellow',
+        quantity: 2,
+      }, {
+        label: 'Healthy Fats',
+        color: 'blue',
+        quantity: 1,
+      }, {
+        label: 'Seeds and Dressings',
+        color: 'orange',
+        quantity: 1,
+      }, {
+        label: 'Oils & Nut Butters',
+        color: 'gray',
+        quantity: 3,
+      }],
+    };
+
+    this.plans.push(planA, planB);
     this.storage.get('selectedPlanName')
       .then((selectedPlanName) => {
         this.setSelectedProperty(selectedPlanName);
@@ -60,6 +95,7 @@ export class PlansProvider {
   }
 
   setSelectedProperty(planName) {
+    this.plans.forEach((plan: any) => plan.selected = false);
     const selectedPlan: any = this.plans.find((plan: any) => plan.name === planName);
     if (selectedPlan) {
       selectedPlan.selected = true;

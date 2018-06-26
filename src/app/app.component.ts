@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
+import { FoodsPage } from '../pages/foods/foods';
 import { PlansProvider } from '../providers/plans/plans';
 @Component({
   templateUrl: 'app.html'
@@ -25,6 +26,11 @@ export class MyApp {
 
   openSettings() {
     this.nav.push(SettingsPage);
+    this.closeMenu();
+  }
+
+  openFood() {
+    this.nav.push(FoodsPage);
     this.closeMenu();
   }
 

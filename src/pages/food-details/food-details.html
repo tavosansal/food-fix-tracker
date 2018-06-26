@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>{{selection}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-searchbar (ionInput)="getItems($event)" color="dark"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let food of foods">
+      {{ food }}
+    </ion-item>
+  </ion-list>
+
+</ion-content>
