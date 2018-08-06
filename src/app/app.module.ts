@@ -12,6 +12,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { PlansProvider } from '../providers/plans/plans';
 import { FoodsPage } from '../pages/foods/foods';
 import { FoodDetailsPage } from '../pages/food-details/food-details';
+import { AboutPage } from '../pages/about/about';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FoodDetailsPage } from '../pages/food-details/food-details';
     SettingsPage,
     FoodsPage,
     FoodDetailsPage,
+    AboutPage,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { FoodDetailsPage } from '../pages/food-details/food-details';
     SettingsPage,
     FoodsPage,
     FoodDetailsPage,
+    AboutPage,
   ],
   providers: [
     StatusBar,
